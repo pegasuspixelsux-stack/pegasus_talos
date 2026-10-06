@@ -39,6 +39,9 @@ export default async function PropertyDetailPage({
   return (
     <div className="flex min-h-screen w-full flex-col bg-canvas text-fg">
       <nav className="fixed top-0 right-0 left-0 z-50 flex items-center justify-between border-b border-fg/10 bg-canvas/80 px-6 py-4 backdrop-blur-md">
+        <Link href="/" className="font-serif text-xl italic">
+          {siteConfig.name}
+        </Link>
         <Link
           href="/properties"
           className="inline-flex items-center gap-2 text-xs font-medium tracking-wider text-fg/60 uppercase transition-colors duration-200 hover:text-fg"
@@ -46,15 +49,6 @@ export default async function PropertyDetailPage({
           <ArrowLeft size={14} aria-hidden />
           Volver al catálogo
         </Link>
-        <Link href="/" className="font-serif text-xl italic">
-          {siteConfig.name}
-        </Link>
-        <a
-          href="#consulta"
-          className="rounded-full border border-fg/30 px-4 py-1.5 text-xs font-medium transition-[background-color,transform] duration-200 ease-out hover:bg-fg/10 active:scale-[0.97]"
-        >
-          Consultar Agente
-        </a>
       </nav>
 
       <PropertyGallery images={property.images} alt={property.name}>

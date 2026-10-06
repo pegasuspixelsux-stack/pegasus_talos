@@ -13,6 +13,7 @@ const navigation = [
   { label: "Propiedades", href: "/properties" },
   { label: "Sobre Nosotros", href: "#nosotros" },
   { label: "Contacto", href: "#contacto" },
+  { label: "Ingresar", href: "/login" },
 ];
 
 const categories = [

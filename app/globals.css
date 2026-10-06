@@ -1,26 +1,39 @@
 @import "tailwindcss";
 
+/* Light is the default. Dark applies when <html data-theme="dark"> is set. */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --canvas: #f5f4f0;
+  --surface: #ffffff;
+  --fg: #0d0e12;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --canvas: #0d0e12;
+  --surface: #12141a;
+  --fg: #ffffff;
+  color-scheme: dark;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-serif: var(--font-instrument-serif);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--fg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
